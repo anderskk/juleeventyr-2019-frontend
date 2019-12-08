@@ -22,7 +22,14 @@ export default function(state = {}, action) {
             return {
                 ...state,
                 currentTaskNumber: 1,
-                teacherQuote: 'Her er første oppgave. Det er bare å spørre om hjelp hvis De trenger det.'
+                teacherQuote: 'Skriv inn ditt (gruppe)navn, er De snill. De kan begynne på leksene etter De har gjort det.'
+            }
+        }
+        case Actions.HAR_MATCHET_NAVN: {
+            return {
+                ...state,
+                harMatchetNavn: true,
+                teacherQuote: 'Bra jobbet! Her er første oppgave. Det er bare å spørre om hjelp hvis De trenger det.'
             };
         }
         case Actions.TASK_COMPLETE: {

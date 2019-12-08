@@ -9,6 +9,11 @@ export const startLekser = ({
     type: START_LEKSER
 });
 
+export const HAR_MATCHET_NAVN = 'HAR_MATCHET_NAVN';
+export const harMatchetNavn = () => ({
+    type: HAR_MATCHET_NAVN
+});
+
 export const TASK_COMPLETE = 'TASK_COMPLETE' ;
 export const taskComplete = () => ({
     type: TASK_COMPLETE

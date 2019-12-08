@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { StateContext } from '../App';
 import Task from './Task';
 import FadeIn from '../components/FadeIn';
+import Rot13Input from '../components/Rot13Input';
 
 
 
@@ -77,24 +78,23 @@ const tasks = {
 };
 
 const TaskManager = () => {
-    const { currentTaskNumber } = useContext(StateContext);
-    // const [visTask, setVisTask] = useState(true);
+    const { currentTaskNumber, harMatchetNavn } = useContext(StateContext);
 
-    // useEffect(() => {
-    //     if (currentTaskNumber === 4) {
-    //         setVisTask(false);
-    //         setTimeout(() => {
-    //             setVisTask(true);
-    //         }, 3000);
-    //     }
-    // }, [currentTaskNumber])
+    if (!harMatchetNavn) {
+        return (
+            <div className="task-container">
+                <h1>{ 'Kongelige lekser' }</h1>
+                <p>{ 'Det er veldig viktig at navnet matcher det i url\'en.' }</p>
+                <Rot13Input />
+            </div>
+        );
+    }
 
-    // if (!visTask) {
-    //     return null;
-    // }
 
     const taskComponents = [
-        <Task initCode={ tasks[1].initCode } taskName={ tasks[1].taskName } leverSvarTekst={ tasks[1].leverSvarTekst} oppgavetekst={ tasks[1].oppgavetekst } key={ tasks[1].taskName } />,
+        <FadeIn fadeInTime={ 1000 }>
+            <Task initCode={ tasks[1].initCode } taskName={ tasks[1].taskName } leverSvarTekst={ tasks[1].leverSvarTekst} oppgavetekst={ tasks[1].oppgavetekst } key={ tasks[1].taskName } />
+        </FadeIn>,
         <Task initCode={ tasks[2].initCode } taskName={ tasks[2].taskName } leverSvarTekst={ tasks[2].leverSvarTekst} oppgavetekst={ tasks[2].oppgavetekst } key={ tasks[2].taskName } />,
         <Task initCode={ tasks[3].initCode } taskName={ tasks[3].taskName } leverSvarTekst={ tasks[3].leverSvarTekst} oppgavetekst={ tasks[3].oppgavetekst } key={ tasks[3].taskName } />,
         <FadeIn>
