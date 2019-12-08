@@ -9,30 +9,6 @@ import { StateContext, DispatchContext, baseUrl } from '../App';
 import axios from 'axios';
 import { taskComplete, taskFail, lastTask405 } from '../actions/actions';
 
-/*
-function getBiggestNumber(arr) {
-    return arr.reduce((tmpBiggest, num) => num > tmpBiggest ? num : tmpBiggest, -Infinity);
-}
-
-function getNumbers(str) {
-    return [...str].map(char => parseInt(char)).filter(char => !isNaN(char));
-}
-
-function removeDuplicates(arr) {
-    return arr.reduce((tmpArr, element) => {
-        if (tmpArr.includes(element)) {
-            return tmpArr;
-        }
-        tmpArr.push(element);
-        return tmpArr;
-    }, [])
-}
-
-function toRoeverspraak(str) {
-    return ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l','m', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z']
-        .reduce((tmpStr, konsonant) => tmpStr.replace(konsonant, `${konsonant}o${konsonant}`), str);
-}
-*/
 
 const getUrlParameter = (name) => {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
