@@ -20,3 +20,44 @@
 .App-link {
   color: #09d3ac;
 }
+
+.center-content {
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.task-container {
+  height: calc(100% - 4em);
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+  margin: 2em 0 2em 2em;
+  background-image: url('./teacher/strek.PNG');
+  background-repeat: repeat;
+}
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+  animation-duration: 1s;
+  
+  /* non-breaking: */
+  height: 100%;
+  width: 100%;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+code {
+  background-color: #002240;
+}
