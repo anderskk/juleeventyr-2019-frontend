@@ -8,8 +8,8 @@ import Del1Lekser from './Del1Lekser';
 import Del2Askepott from './Del2Askepott';
 
 
-export const baseUrl = 'http://localhost:5000';
-// const baseUrl = 'https://tempoetappe-backend.herokuapp.com';
+// export const baseUrl = 'http://localhost:5000';
+export const baseUrl = 'https://jul19kongeligelekser-backend.herokuapp.com';
 
 export const StateContext = createContext();
 export const DispatchContext = createContext();
