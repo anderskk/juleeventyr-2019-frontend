@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row';
 import { startLekser } from './actions/actions';
 import Task from './tasks/Task';
 import FadeIn from './components/FadeIn';
+import TaskManager from './tasks/TaskManager';
 
 
 const Klasserom = () => {
@@ -12,7 +13,7 @@ const Klasserom = () => {
     const dispatch = useContext(DispatchContext);
 
     if (Number.isInteger(currentTaskNumber)) {
-        return <Task />;
+        return <TaskManager />;
     }
     const gjorLekser = () => dispatch(startLekser);
 

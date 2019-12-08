@@ -26,11 +26,11 @@ export default function(state = {}, action) {
             };
         }
         case Actions.TASK_COMPLETE: {
-            if (state.currentTaskNumber === 4) {
+            if (state.currentTaskNumber === 3) {
                 return {
                     ...state,
-                    allTasksCompleted: true,
-                    teacherQuote: 'bra jobba '
+                    currentTaskNumber: state.currentTaskNumber + 1,
+                    teacherQuote: 'Beklager, Deres høyhet. Det var visst én oppgave til her. Dumme meeeeeg.'
                 };
             }
             return {
@@ -48,7 +48,7 @@ export default function(state = {}, action) {
         case Actions.LAST_TASK_405: {
             return {
                 ...state,
-                teacherQuote: 'Hmm, hva er nu dette? Beklager, Deres høyhet, men jeg muligens begått en feil.. Men jeg er overbevist om at De finner en måte å løse den på.'
+                teacherQuote: 'Hmm, hva er nu dette? Beklager, Deres høyhet, men jeg muligens begått en feil.. Samtidig er jeg overbevist om at De finner en måte å løse det på.'
             };
         }
         default: {

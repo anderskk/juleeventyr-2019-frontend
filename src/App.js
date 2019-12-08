@@ -1,19 +1,20 @@
 import React, { createContext, useReducer } from 'react';
-import Container from 'react-bootstrap/Container';
 import Alert from 'react-bootstrap/Alert';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import './App.css';
 import reducer from './reducer/reducer';
-import TeacherAside from './teacher/TeacherAside';
 import Background from './Background'
-import MainContent from './container/MainContent';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Del1Lekser from './Del1Lekser';
+import Del2Askepott from './Del2Askepott';
 
+
+export const baseUrl = 'http://localhost:5000';
+// const baseUrl = 'https://tempoetappe-backend.herokuapp.com';
 
 export const StateContext = createContext();
 export const DispatchContext = createContext();
 
-const getUrlParameter = (name) => {
+export const getUrlParameter = (name) => {
   name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
   let regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
   let results = regex.exec(window.location.search);
@@ -21,31 +22,35 @@ const getUrlParameter = (name) => {
 };
 
 const initState = {
-  teacherQuote: 'Deres høyhet! Deres høyyyheeeeet! Hva med leksene, deres høyhet? Leksene!'
+  teacherQuote: 'Deres høyhet! Deres høyyyheeeeet! Off.. Men hva med leksene, nu da? Leksene!'
 };
 
 function App() {
   const user = getUrlParameter('username');
   const [state, dispatch] = useReducer(reducer, initState);
+
+  if (!user) {
+    return (
+      <Alert variant="danger">
+            { 'Ingen bruker er satt! Skriv inn ditt brukernavn i url for å registrere svarene: /?username=<username>' }
+          </Alert>
+    );
+  }
+
   return (
     <StateContext.Provider value={ state }>
       <DispatchContext.Provider value={ dispatch }>
-        { !user && 
-          <Alert variant="danger">
-            { 'Ingen bruker er satt! Skriv inn ditt brukernavn i url for å registrere svarene: /?username=<username>' }
-          </Alert>
-        }
         <Background />
-        <Container>
-            <Row>
-              <Col md={3} lg={3} sm={3}>
-                <TeacherAside />
-              </Col>
-              <Col md={9} lg={9} sm={9}>
-                <MainContent />
-              </Col>
-            </Row>
-          </Container>
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <Del1Lekser />
+            </Route>
+            <Route path ="/askepott">
+              <Del2Askepott />
+            </Route>
+          </Switch>
+        </Router>
       </DispatchContext.Provider>
     </StateContext.Provider>
   );
