@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { StateContext } from '../App';
 import Task from './Task';
+import FadeIn from '../components/FadeIn';
 
 
 
@@ -77,26 +78,28 @@ const tasks = {
 
 const TaskManager = () => {
     const { currentTaskNumber } = useContext(StateContext);
-    const [visTask, setVisTask] = useState(true);
+    // const [visTask, setVisTask] = useState(true);
 
-    useEffect(() => {
-        if (currentTaskNumber === 4) {
-            setVisTask(false);
-            setTimeout(() => {
-                setVisTask(true);
-            }, 3000);
-        }
-    }, [currentTaskNumber])
+    // useEffect(() => {
+    //     if (currentTaskNumber === 4) {
+    //         setVisTask(false);
+    //         setTimeout(() => {
+    //             setVisTask(true);
+    //         }, 3000);
+    //     }
+    // }, [currentTaskNumber])
 
-    if (!visTask) {
-        return null;
-    }
+    // if (!visTask) {
+    //     return null;
+    // }
 
     const taskComponents = [
         <Task initCode={ tasks[1].initCode } taskName={ tasks[1].taskName } leverSvarTekst={ tasks[1].leverSvarTekst} oppgavetekst={ tasks[1].oppgavetekst } key={ tasks[1].taskName } />,
         <Task initCode={ tasks[2].initCode } taskName={ tasks[2].taskName } leverSvarTekst={ tasks[2].leverSvarTekst} oppgavetekst={ tasks[2].oppgavetekst } key={ tasks[2].taskName } />,
         <Task initCode={ tasks[3].initCode } taskName={ tasks[3].taskName } leverSvarTekst={ tasks[3].leverSvarTekst} oppgavetekst={ tasks[3].oppgavetekst } key={ tasks[3].taskName } />,
-        <Task initCode={ tasks[4].initCode } taskName={ tasks[4].taskName } leverSvarTekst={ tasks[4].leverSvarTekst} oppgavetekst={ tasks[4].oppgavetekst } key={ tasks[4].taskName } />,
+        <FadeIn>
+            <Task initCode={ tasks[4].initCode } taskName={ tasks[4].taskName } leverSvarTekst={ tasks[4].leverSvarTekst} oppgavetekst={ tasks[4].oppgavetekst } key={ tasks[4].taskName } />
+        </FadeIn>
     ];
 
     return taskComponents[currentTaskNumber - 1];

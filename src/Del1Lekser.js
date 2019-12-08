@@ -1,7 +1,6 @@
 import React from 'react';
 import MainContent from './container/MainContent';
 import TeacherAside from './teacher/TeacherAside';
-import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 

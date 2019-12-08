@@ -32,8 +32,8 @@ function App() {
   if (!user) {
     return (
       <Alert variant="danger">
-            { 'Ingen bruker er satt! Skriv inn ditt brukernavn i url for å registrere svarene: /?username=<username>' }
-          </Alert>
+        { 'Ingen bruker er satt! Skriv inn ditt brukernavn i url for å registrere svarene: /?username=<username>' }
+      </Alert>
     );
   }
 

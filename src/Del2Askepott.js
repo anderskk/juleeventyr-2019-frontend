@@ -4,6 +4,7 @@ import star from './star.svg';
 import askepott from './askepott.png';
 import Axios from 'axios';
 import { baseUrl, getUrlParameter } from './App';
+import FadeIn from './components/FadeIn';
 
 
 const Del2Askepott = () => {
@@ -63,16 +64,19 @@ const Del2Askepott = () => {
     if (hasClicked) {
         return (
             <div className="akepott-image">
-                { stars }
-                <img src={ askepott } alt="alt-text" />
+                <FadeIn fadeInTime={ 500 }>
+                    { stars }
+                    <img src={ askepott } alt="alt-text" />
+                </FadeIn>
             </div>
         );
     }
 
-    const clickCookie = () => {
+    const clickCookie = async () => {
         setHasClicked(true);
         try {
-            Axios.get(`${baseUrl}/api/jaktutstyr?user=${getUrlParameter('username')}`);
+            await Axios.get(`${baseUrl}/api/jaktutstyr?user=${getUrlParameter('username')}`);
+            console.log("%cHusk å url decode verdien...", "background: red; color: yellow; font-size: x-large");
         } catch (e) {
             console.log(e.response);
         }

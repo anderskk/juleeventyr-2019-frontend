@@ -3,7 +3,6 @@ import { StateContext, DispatchContext } from './App';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import { startLekser } from './actions/actions';
-import Task from './tasks/Task';
 import FadeIn from './components/FadeIn';
 import TaskManager from './tasks/TaskManager';
 

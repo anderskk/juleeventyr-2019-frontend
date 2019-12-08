@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-const FadeIn = ({ children }) => {
+const FadeIn = ({ fadeInTime = 3000, children }) => {
     const [show, setShow] = useState(false);
 
     setTimeout(() => {
         setShow(true);
-    }, 500);
+    }, fadeInTime);
 
     if (!show) {
         return null;
