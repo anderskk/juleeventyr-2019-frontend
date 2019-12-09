@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import cookie from './cookie.png';
+import noetten from './noetten.png';
 import star from './star.svg';
 import askepott from './askepott.png';
 import Axios from 'axios';
@@ -11,8 +11,7 @@ const Del2Askepott = () => {
 
     const [hasClicked, setHasClicked] = useState(false);
     const [ferdigMedLekser, setFerdigMedLekser] = useState(false);
-    // const dispatch = useContext(DispatchContext);
-    // const { ferdigMedLekser } = useContext(StateContext);
+
     useEffect(() => {
         async function sjekkLeksestatus() {
             try {
@@ -87,7 +86,7 @@ const Del2Askepott = () => {
             onClick={ clickCookie }
             id="cookie" className="button-image">
             { stars }
-            <img src={ cookie } alt="alt-text" />
+            <img src={ noetten } alt="alt-text" />
         </button>
     );
 };
