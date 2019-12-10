@@ -53,7 +53,7 @@ const tasks = {
             </p>
             <p>{'Lykke tiiiiiil!'}</p>
         </>),
-        leverSvarTekst: 'Her har du siste oppgave, kan jeg gå nå?'
+        leverSvarTekst: 'Værsågod, herr lærer'
     },
     4: {
         taskName: 'toRoeverspraak',
@@ -71,6 +71,24 @@ const tasks = {
                 <span>{ ' returnere ' }</span>
                 <span><code>{ '\'Hohei, hohvovorordodanon gogåror dodetot?\'' }</code></span>
             </p>
+            <p>{'Lykke tiiiiiil!'}</p>
+        </>),
+        leverSvarTekst: 'Her har du siste oppgave, kan jeg gå nå?'
+    },
+    5: {
+        taskName: 'swapPairs',
+        initCode: `function swapPairs(str) {
+    //code
+}`,
+        oppgavetekst: (<>
+            <p>{'Skriv funksjonen swapPairs. '}</p>
+            <p>{'Noen eksempler'}</p>
+            <ul>
+                <li><code>{ 'swapPairs("123456") ➞ "214365"' }</code></li>
+                <li><code>{ 'swapPairs("hTsii  s aimex dpus rtni.g") ➞ "This is a mixed up string."' }</code></li>
+                <li><code>{ 'swapPairs("badce") ➞ "abcde"' }</code></li>
+            </ul>
+            <p>{'Her må du selv skjønne hva funnksjonen gjør.'}</p>
             <p>{'Lykke tiiiiiil!'}</p>
         </>),
         leverSvarTekst: '#&¤$@!)'
@@ -97,8 +115,9 @@ const TaskManager = () => {
         </FadeIn>,
         <Task initCode={ tasks[2].initCode } taskName={ tasks[2].taskName } leverSvarTekst={ tasks[2].leverSvarTekst} oppgavetekst={ tasks[2].oppgavetekst } key={ tasks[2].taskName } />,
         <Task initCode={ tasks[3].initCode } taskName={ tasks[3].taskName } leverSvarTekst={ tasks[3].leverSvarTekst} oppgavetekst={ tasks[3].oppgavetekst } key={ tasks[3].taskName } />,
+        <Task initCode={ tasks[4].initCode } taskName={ tasks[4].taskName } leverSvarTekst={ tasks[4].leverSvarTekst} oppgavetekst={ tasks[4].oppgavetekst } key={ tasks[4].taskName } />,
         <FadeIn>
-            <Task initCode={ tasks[4].initCode } taskName={ tasks[4].taskName } leverSvarTekst={ tasks[4].leverSvarTekst} oppgavetekst={ tasks[4].oppgavetekst } key={ tasks[4].taskName } />
+            <Task initCode={ tasks[5].initCode } taskName={ tasks[5].taskName } leverSvarTekst={ tasks[5].leverSvarTekst} oppgavetekst={ tasks[5].oppgavetekst } key={ tasks[5].taskName } />
         </FadeIn>
     ];
 

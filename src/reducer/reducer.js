@@ -33,7 +33,7 @@ export default function(state = {}, action) {
             };
         }
         case Actions.TASK_COMPLETE: {
-            if (state.currentTaskNumber === 3) {
+            if (state.currentTaskNumber === 4) {
                 return {
                     ...state,
                     currentTaskNumber: state.currentTaskNumber + 1,

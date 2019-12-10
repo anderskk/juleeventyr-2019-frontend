@@ -26,7 +26,7 @@ const Task = ({ taskName, initCode, oppgavetekst, leverSvarTekst }) => {
     const submitAnswer = async (taskName, code) => {
         const user = getUrlParameter('username');
         const url = `${baseUrl}/api/checkanswer`;
-        if (taskName === 'toRoeverspraak') {
+        if (taskName === 'swapPairs') {
             try {
                 await axios.put(
                     url, 
@@ -53,7 +53,7 @@ const Task = ({ taskName, initCode, oppgavetekst, leverSvarTekst }) => {
     return (
         <div className="task-container">
             <h1>{ 'Kongelige lekser' }</h1>
-            <h2>{ `Oppgave ${currentTaskNumber} av 3` }</h2>
+            <h2>{ `Oppgave ${currentTaskNumber} av 4` }</h2>
             <div>{ oppgavetekst }</div>
             <CodeMirror 
                 value={ code }
